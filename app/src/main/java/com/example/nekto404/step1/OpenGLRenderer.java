@@ -120,8 +120,17 @@ public class OpenGLRenderer implements Renderer {
     public void onDrawFrame(GL10 arg0) {
         glClear(GL_COLOR_BUFFER_BIT);
         glLineWidth(5);
+
+        // синие треугольники
+        glUniform4f(uColorLocation, 0.0f, 0.0f, 1.0f, 1.0f);
         glDrawArrays(GL_TRIANGLES, 0, 12);
+
+        // зеленые линии
+        glUniform4f(uColorLocation, 0.0f, 1.0f, 0.0f, 1.0f);
         glDrawArrays(GL_LINES, 12, 4);
+
+        // красные точки
+        glUniform4f(uColorLocation, 1.0f, 0.0f, 0.0f, 1.0f);
         glDrawArrays(GL_POINTS, 16, 3);
     }
 
